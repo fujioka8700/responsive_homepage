@@ -61,7 +61,7 @@ body {
 
 header {
     background: linear-gradient(180deg, #6F7DFB 0%, #26308C 100%);
-    height: 100vh;
+    height: 768px;
     width: 100%;
 }
 
@@ -104,12 +104,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100vh;
+    height: 768px;
     width: 100%;
     padding-top: 60px;
 
     .left {
-        width: 457px;
+        flex: 1;
 
         h1 {
             font-family: 'Raleway', sans-serif;
@@ -127,6 +127,7 @@ nav {
             line-height: 200%;
             color: #FFFFFF;
             margin-bottom: 30px;
+            width: 457px;
         }
     }
 
@@ -142,6 +143,61 @@ nav {
 
 /* Achievement Cards */
 
-.achievement-cards {
-    display: none;
+.achievement-card {
+    position: absolute;
+    min-width: 200px;
+
+    .content {
+        background: #FFFFFF;
+        border-radius: 24px;
+        padding: 8px 32px;
+        z-index: 10;
+        position: relative;
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    h3 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 36px;
+        color: $dark-blue-color;
+        margin: 0;
+        text-align: center;
+    }
+
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        color: $dark-blue-color;
+        margin-top: -8px;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    &.students-enrolled {
+        left: 47%;
+        top: 370px;
+    }
+
+    &.overall-rating {
+        left: 45%;
+        top: 566px;
+    }
+
+    .bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 8px;
+        left: 8px;
+        background: linear-gradient(180deg, #6F7DFB 0%, #3B448F 100%);
+        border-radius: 24px;
+        z-index: 1;
+    }
 }
