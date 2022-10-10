@@ -29,7 +29,7 @@ body {
 .btn {
     padding: 16px 32px;
     border-radius: 24px;
-    color: #fff;
+    color: #FFFFFF;
     display: inline-block;
     font-weight: bold;
     font-size: 16px;
@@ -199,5 +199,124 @@ nav {
         background: linear-gradient(180deg, #6F7DFB 0%, #3B448F 100%);
         border-radius: 24px;
         z-index: 1;
+    }
+}
+
+/* Testimonials Section */
+
+section {
+    margin-top: 100px;
+
+    p {
+        font-family: 'Poppins', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 200%;
+        color: $dark-blue-color;
+        margin: 12px 0;
+    }
+}
+
+h2 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+    margin: 0;
+    color: $dark-blue-color;
+
+    &.light {
+        color: #FFFFFF;
+    }
+}
+
+.testimonials-section {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+
+    .mobile-btn {
+        display: none;
+    }
+
+    .features {
+        margin-bottom: 30px;
+    }
+
+    .testimonials-card {
+        width: 442px;
+        background: #FFFFFF;
+        box-shadow: 0px 9px 36px rgba(0, 0, 0, 0.2);
+        border-radius: 24px;
+        margin-bottom: 50px;
+        position: relative;
+
+        .content {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 150%;
+            color: #FFFFFF;
+            background: $light-blue-color;
+            border-radius: 24px;
+            padding: 24px 32px;
+        }
+
+        &:last-child {
+            transform: translateX(32px);
+
+            .content {
+                background: $orange-color;
+            }
+
+            &::before {
+                left: 48px;
+                top: -50px;
+                border-radius: 0 0 24px 24px;
+                height: calc(100% + 90px);
+                z-index: -1;
+            }
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            right: 32px;
+            bottom: 12px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            background: $dark-blue-color;
+            width: 28px;
+            height: 40px;
+            top: -40px;
+            left: 80px;
+            border-radius: 24px 24px 0 0;
+        }
+    }
+
+    .info {
+        padding: 24px 32px;
+        background: #FFFFFF;
+        border-radius: 24px;
+
+        h4 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 900;
+            font-size: 24px;
+            color: $dark-blue-color;
+            margin: 0;
+        }
+
+        p.company {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 400;
+            font-size: 18px;
+            color: $dark-blue-color;
+            margin: 0;
+        }
     }
 }
