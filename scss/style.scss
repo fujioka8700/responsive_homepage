@@ -320,3 +320,88 @@ h2 {
         }
     }
 }
+
+/* Courses Section */
+
+.courses-section {
+    background: linear-gradient(180deg, #6F7DFB 0%, #26308C 100%);
+    padding: 70px 0;
+    padding-bottom: 120px;
+
+    h2 {
+        text-align: center;
+    }
+
+    .course-cards {
+        display: flex;
+        gap: 70px;
+
+        .course-card {
+            flex: 1;
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 0px 32px;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .course-card h3 {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 900;
+            font-size: 30px;
+            line-height: 150%;
+            color: $dark-blue-color;
+        }
+
+        .course-card .info {
+            display: flex;
+            gap: 16px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-card .duration {
+            font-family: 'Raleway', sans-serif;
+            font-weight: 900;
+            font-size: 16px;
+            line-height: 150%;
+            color: $dark-blue-color;
+            white-space: nowrap;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .course-card .duration::before {
+            content: url(../images/clock.svg);
+            position: absolute;
+            top: 2px;
+            left: -7px;
+        }
+
+        .course-card::after {
+            content: '';
+            width: 462px;
+            height: 8px;
+            background: #023047;
+            border-radius: 24px;
+            position: absolute;
+            bottom: 0;
+        }
+
+    }
+
+    img {
+        width: 100%;
+        // filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
+        // border-radius: 24px;
+    }
+
+    .wrapper {
+        position: relative;
+
+        .btn {
+            position: absolute;
+            right: 0;
+        }
+    }
+}
