@@ -1,7 +1,6 @@
-/*_reset.scssを読み込む */
-// @import "reset";
-/*_color.scssを読み込む */
-@import 'color';
+// @import "reset"; // Reset CSS
+@import 'color'; // Base Color
+@import 'media'; // Media query
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Raleway:wght@300;900&display=swap');
 
 // Google Fonts
@@ -22,6 +21,10 @@ body {
 .wrapper {
     max-width: 1134px;
     margin: 0 auto;
+
+    @include tab {
+        padding: 0 100px;
+    }
 }
 
 /* Buttons */
@@ -31,7 +34,7 @@ body {
     border-radius: 24px;
     color: #FFFFFF;
     display: inline-block;
-    font-weight: bold;
+    font-weight: 700;
     font-size: 16px;
     text-decoration: none;
     position: relative;
@@ -54,6 +57,10 @@ body {
 
     &.enrol-icon {
         padding-left: 60px;
+    }
+
+    @include tab {
+        padding: 12px 32px;
     }
 }
 
@@ -106,6 +113,16 @@ nav {
         padding: 12px;
         top: 0;
     }
+
+    @include tab {
+        width: 100%;
+        left: 0;
+        padding: 36px 100px;
+
+        &.scrolled {
+            padding: 16px 100px;
+        }
+    }
 }
 
 /* Hero Section */
@@ -117,6 +134,7 @@ nav {
     height: 768px;
     width: 100%;
     padding-top: 60px;
+    position: relative;
 
     .left {
         flex: 1;
@@ -139,19 +157,51 @@ nav {
             margin-bottom: 30px;
             width: 457px;
         }
+
+        @include tab {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .btn {
+        align-self: flex-start;
     }
 
     .right {
         align-self: flex-end;
+        position: absolute;
+        right: 0;
 
         img {
             height: 520px;
             vertical-align: middle;
+
+            @include tab {
+                height: 580px;
+            }
         }
+
+        @include tab {
+            position: absolute;
+            bottom: 0;
+        }
+    }
+
+    @include tab {
+        flex-direction: column;
+        position: relative;
     }
 }
 
 /* Achievement Cards */
+
+.achievement-cards {
+    align-self: flex-start;
+    margin: 40px;
+}
 
 .achievement-card {
     position: absolute;
@@ -193,11 +243,21 @@ nav {
     &.students-enrolled {
         left: 47%;
         top: 370px;
+
+        @include tab {
+            left: unset;
+            top: unset;
+        }
     }
 
     &.overall-rating {
         left: 45%;
         top: 566px;
+
+        @include tab {
+            left: unset;
+            top: unset;
+        }
     }
 
     .bg {
@@ -209,6 +269,11 @@ nav {
         background: linear-gradient(180deg, #6F7DFB 0%, #3B448F 100%);
         border-radius: 24px;
         z-index: 1;
+    }
+
+    @include tab {
+        position: relative;
+        margin-bottom: 80px;
     }
 }
 
@@ -522,5 +587,15 @@ footer {
 
     .copyright {
         margin-top: 20px;
+    }
+}
+
+/* まとめてタブレットのスタイル指定 */
+
+@include tab {
+
+    header,
+    .hero-section {
+        height: 1100px;
     }
 }
