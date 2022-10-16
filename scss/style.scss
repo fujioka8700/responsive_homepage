@@ -312,6 +312,12 @@ h2 {
 
     .mobile-btn {
         display: none;
+
+        @include tab {
+            display: block;
+            align-self: flex-end;
+            order: 3;
+        }
     }
 
     .features {
@@ -350,6 +356,17 @@ h2 {
                 border-radius: 0 0 24px 24px;
                 height: calc(100% + 90px);
                 z-index: -1;
+
+                @include tab {
+                    top: -40px;
+                    left: 80px;
+                    height: calc(100% + 80px);
+                }
+            }
+
+            @include tab {
+                transform: translateX(0px);
+                margin-bottom: 0;
             }
         }
 
@@ -370,6 +387,11 @@ h2 {
             top: -40px;
             left: 80px;
             border-radius: 24px 24px 0 0;
+        }
+
+        @include tab {
+            width: 100%;
+            margin-bottom: 40px;
         }
     }
 
@@ -393,6 +415,38 @@ h2 {
             color: $dark-blue-color;
             margin: 0;
         }
+    }
+
+    .desktop-btn {
+        @include tab {
+            display: none;
+        }
+    }
+
+    .right {
+        @include tab {
+            order: 1;
+
+            h2 {
+                margin-bottom: 20px;
+            }
+
+            p {
+                display: inline;
+            }
+        }
+    }
+
+    .left {
+        @include tab {
+            order: 2;
+        }
+    }
+
+    @include tab {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 50px;
     }
 }
 
@@ -467,8 +521,6 @@ h2 {
 
     img {
         width: 100%;
-        // filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.25));
-        // border-radius: 24px;
     }
 
     .wrapper {
@@ -572,8 +624,6 @@ footer {
             top: 50%;
             right: 5px;
             transform: translateY(-50%);
-            // width: 135px;
-            // height: 30px;
             background: $dark-blue-color;
             border-radius: 8px;
             padding: 2px 32px;
@@ -597,5 +647,9 @@ footer {
     header,
     .hero-section {
         height: 1100px;
+    }
+
+    h2 {
+        font-size: 40px;
     }
 }
