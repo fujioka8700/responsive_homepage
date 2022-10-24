@@ -509,12 +509,14 @@ h2 {
 
         .course-card::after {
             content: '';
-            width: 462px;
+            width: 88%;
             height: 8px;
             background: #023047;
             border-radius: 24px;
             position: absolute;
             bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
     }
