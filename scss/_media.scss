@@ -1,6 +1,7 @@
 // ブレイクポイントを指定
 // $pc: 9999px;
 $tab: 1100px;
+$tab800: 800px;
 $sp: 480px;
 
 // @mixin pc {
@@ -11,6 +12,12 @@ $sp: 480px;
 
 @mixin tab {
     @media screen and (max-width: ($tab)) {
+        @content;
+    }
+}
+
+@mixin tab800 {
+    @media screen and (max-width: ($tab800)) {
         @content;
     }
 }
