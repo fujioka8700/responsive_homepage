@@ -25,6 +25,10 @@ body {
     @include tab {
         padding: 0 100px;
     }
+
+    @include sp {
+        padding: 0 32px;
+    }
 }
 
 /* Buttons */
@@ -125,7 +129,12 @@ nav {
                 background: $light-blue-color;
                 padding: 8px 100px;
                 box-shadow: 0 9px 21px -5px rgba(0, 0, 0, 0.3);
-                ;
+            }
+        }
+
+        @include sp {
+            &.scrolled {
+                padding: 8px 32px;
             }
         }
     }
@@ -142,6 +151,10 @@ nav {
 
     @include tab800 {
         display: none;
+    }
+
+    @include sp {
+        padding: 36px 32px;
     }
 }
 
@@ -181,6 +194,10 @@ nav {
             opacity: 0;
             pointer-events: none;
             transition: all 400ms ease;
+        }
+
+        @include sp {
+            right: 32px;
         }
     }
 
@@ -228,6 +245,10 @@ nav {
             line-height: 125%;
             color: #FFFFFF;
             margin-bottom: 0;
+
+            @include sp {
+                font-size: 36px;
+            }
         }
 
         p {
@@ -238,6 +259,10 @@ nav {
             color: #FFFFFF;
             margin-bottom: 30px;
             width: 457px;
+
+            @include sp {
+                width: 100%;
+            }
         }
 
         @include tab {
@@ -264,6 +289,10 @@ nav {
             @include tab {
                 height: 580px;
             }
+
+            @include sp {
+                height: 100px;
+            }
         }
 
         @include tab {
@@ -283,6 +312,10 @@ nav {
 .achievement-cards {
     align-self: flex-start;
     margin: 40px;
+
+    @include sp {
+        margin: 0;
+    }
 }
 
 .achievement-card {
@@ -356,6 +389,10 @@ nav {
     @include tab {
         position: relative;
         margin-bottom: 80px;
+    }
+
+    @include sp {
+        margin-bottom: 48px;
     }
 }
 
@@ -637,12 +674,20 @@ h2 {
     .wrapper {
         position: relative;
 
+        @include sp {
+            padding: 0;
+        }
+
         .btn {
             position: absolute;
             right: 0;
 
             @include tab {
                 right: 100px;
+            }
+
+            @include sp {
+                right: 32px;
             }
         }
     }
@@ -658,6 +703,10 @@ h2 {
         justify-content: center;
         gap: 30px;
         margin-top: 40px;
+
+        @include sp {
+            flex-direction: column;
+        }
 
         .app-btn {
             background: #000000;
@@ -714,13 +763,32 @@ footer {
                 grid-column: 1 / 3;
             }
         }
+
+        @include sp {
+            grid-template-columns: 1fr;
+            text-align: center;
+
+            .links:last-child {
+                grid-column: 1;
+            }
+        }
     }
 
     .social {
         margin-left: 20px;
 
+        @include sp {
+            margin-left: 0;
+        }
+
         a {
             margin-right: 28px;
+
+            @include sp {
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
         }
     }
 
@@ -755,15 +823,25 @@ footer {
             font-size: 16px;
             line-height: 200%;
             color: #FFFFFF;
+
+            @include sp {
+                position: static;
+                transform: none;
+                margin-top: 15px;
+            }
         }
     }
 
     .copyright {
         margin-top: 20px;
+
+        @include sp {
+            font-size: 14px;
+        }
     }
 }
 
-/* まとめてタブレットのスタイル指定 */
+/* タブレットのデザイン */
 
 @include tab {
 
@@ -774,5 +852,19 @@ footer {
 
     h2 {
         font-size: 40px;
+    }
+}
+
+/* スマホのデザイン */
+
+@include sp {
+
+    header,
+    .hero-section {
+        height: 896px;
+    }
+
+    h2 {
+        font-size: 30px;
     }
 }
